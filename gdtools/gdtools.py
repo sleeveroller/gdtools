@@ -58,10 +58,15 @@ def file_uploader(q, simulate):
 def sync(args):
 
   global _killed
-
+  
   logger = logging.getLogger('gdtools')
 
-  logger.info(args)
+  logger.debug(args)
+  
+  if args.mode == 'pull':
+    print 'pull not supported yet'
+    return
+  
   if args.simulate:
     logger.info('running in simuation mode, no changes will be made to local or remote file systems')
   
